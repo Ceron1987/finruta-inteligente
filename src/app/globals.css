@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background: #05080c;
+    color: #e2e8f0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  :root {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-panel border border-border rounded-2xl;
+  }
+  .kpi {
+    @apply bg-gradient-to-b from-[#0b1424] to-[#0a1120] border border-border rounded-2xl p-4;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-3.5 py-2 rounded-xl font-semibold text-[13px] transition;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-br from-brand-cyan to-brand-green text-slate-950 hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply bg-transparent border border-border-2 text-txt hover:bg-panel-2 hover:border-brand-cyan;
+  }
+  .btn-danger {
+    @apply bg-rose-500/10 border border-rose-500/40 text-rose-300 hover:bg-rose-500/20;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-2 py-[2px] rounded-full text-[11px] font-semibold tracking-wide;
+  }
+  .dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+  .table-head {
+    @apply text-[11px] uppercase tracking-wider text-slate-500 font-semibold;
+  }
+  .bar {
+    @apply h-1.5 bg-[#0f172a] rounded-full overflow-hidden;
+  }
+  .bar > span {
+    @apply block h-full bg-gradient-to-r from-brand-cyan to-brand-green rounded-full;
+  }
+  .glass {
+    background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(11,18,32,.85));
+    backdrop-filter: blur(8px);
+  }
+  .scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
+  .scrollbar::-webkit-scrollbar-track { background: transparent; }
+
+  input, select, textarea {
+    @apply bg-[#0a1120] border border-border-2 rounded-xl px-3 py-2 text-[13px] text-txt;
+  }
+  input:focus, select:focus, textarea:focus {
+    @apply outline-none border-brand-cyan ring-2 ring-brand-cyan/20;
+  }
+  label {
+    @apply text-[11.5px] text-txt-dim font-medium;
+  }
+}
+
+.grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,.08) 1px, transparent 0);
+  background-size: 22px 22px;
+}
